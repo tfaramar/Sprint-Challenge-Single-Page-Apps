@@ -14,7 +14,8 @@ const EpisodesList = function (props) {
             axios
                 .get('https://rickandmortyapi.com/api/episode')
                 .then(response => {
-                    console.log(response.data.results)
+                    //console.log(response.data.results)
+                    setEpisodes(response.data.results);
                 })
                 .catch(error => {
                     console.error('There was a server error', error);
@@ -26,19 +27,18 @@ const EpisodesList = function (props) {
 
 
         return (
-            <div>Hello!</div>
-    //     <section className='episode-list grid-view'>
-    //         <div className='card-wrapper'>
-    //             {locations.map(data => (
-    //                 console.log(data),
-    //                 <EpisodeCard key={data.id}
-    //                     name={data.name}
-    //                     type={data.type}
-    //                     dimension={data.dimension} />
-    //             ))}
-    //         </div>
+        <section className='episode-list grid-view'>
+            <div className='card-wrapper'>
+                {episodes.map(data => (
+                    //console.log(data),
+                    <EpisodeCard key={data.id}
+                        name={data.name}
+                        type={data.type}
+                        dimension={data.dimension} />
+                ))}
+            </div>
 
-    //     </section>
+        </section>
     )
 
 }
