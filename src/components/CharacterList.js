@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-//import CharacterCard from './CharacterCard.js';
+import CharacterCard from './CharacterCard.js';
 
 const CharacterList = function (props) {
 
@@ -16,7 +16,7 @@ const CharacterList = function (props) {
       axios
         .get('https://rickandmortyapi.com/api/character/')
         .then(response => {
-          console.log(response.data.results)
+          //console.log(response.data.results)
           setCharacters(response.data.results);
         })
         .catch(error => {
@@ -30,23 +30,21 @@ const CharacterList = function (props) {
 
   return (
     <section className='character-list grid-view'>
-      {/* <div className='card-wrapper'>
-          {characters.map((data, i) => (
-            <h1 key={i} name={data.name} />
+      <div className='card-wrapper'>
+          {characters.map(data => (
+            //console.log(data),
+            <CharacterCard key={data.id} 
+                           picture={data.image}
+                           name={data.name}
+                           status={data.status}
+                           species={data.species}
+                           origin={data.origin.name} />
           ))}
-      </div> */}
+      </div>
     
     </section>
 
-  )
-
-  // function CharacterDetails({ character }) {
-  //   const { image, name, status, species } = character;
-  //   return (
-  //     <CharacterCard character={character} />
-  //   );
-
-  // }
+  );
 
 }
 
