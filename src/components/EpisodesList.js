@@ -14,7 +14,7 @@ const EpisodesList = function (props) {
             axios
                 .get('https://rickandmortyapi.com/api/episode')
                 .then(response => {
-                    //console.log(response.data.results)
+                    console.log(response.data.results)
                     setEpisodes(response.data.results);
                 })
                 .catch(error => {
@@ -33,8 +33,8 @@ const EpisodesList = function (props) {
                     //console.log(data),
                     <EpisodeCard key={data.id}
                         name={data.name}
-                        type={data.type}
-                        dimension={data.dimension} />
+                        episode={data.episode}
+                        airdate={data.air_date} />
                 ))}
             </div>
 

@@ -5,8 +5,8 @@ export default function EpisodeCard ( props ) {
     return (
       <div className='episode-card'>
         <h2>Name: {props.name}</h2>
-        <p>Type: {props.type}</p>
-        <p>Dimension: {props.dimension}</p>
+        <p>Episode: {props.episode}</p>
+        <p>Air Date: {props.airdate}</p>
       </div>
       
       )
