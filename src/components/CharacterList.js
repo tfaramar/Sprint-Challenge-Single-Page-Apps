@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export default function CharacterList() {
+//import CharacterCard from './CharacterCard.js';
+
+const CharacterList = function (props) {
+
+  console.log(props);
   // TODO: Add useState to track data from useEffect
-  const [characters, setCharacters] = useState()
+  const [characters, setCharacters] = useState([])
 
   useEffect(() => {
     // TODO: Add AJAX/API Request here - must run in `useEffect`
@@ -21,15 +25,29 @@ export default function CharacterList() {
     }
 
     getCharacters();
-  }, [])
+  }, []);
+
 
   return (
     <section className='character-list grid-view'>
-      <h2>TODO: `array.map()` over your state here!</h2>
+      {/* <div className='card-wrapper'>
+          {characters.map((data, i) => (
+            <h1 key={i} name={data.name} />
+          ))}
+      </div> */}
+    
     </section>
 
   )
 
+  // function CharacterDetails({ character }) {
+  //   const { image, name, status, species } = character;
+  //   return (
+  //     <CharacterCard character={character} />
+  //   );
 
+  // }
 
 }
+
+export default CharacterList;
