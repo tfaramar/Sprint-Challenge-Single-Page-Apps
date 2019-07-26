@@ -1,13 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Card } from 'semantic-ui-react';
 
-export default function EpisodeCard ( props ) {
+export default function EpisodeCard(props) {
     //console.log(props);
     return (
-      <div className='episode-card'>
-        <h2>Name: {props.name}</h2>
-        <p>Episode: {props.episode}</p>
-        <p>Air Date: {props.airdate}</p>
-      </div>
-      
-      )
-  }
+        <Card className='episode-card'>
+            <Card.Content>
+                <Card.Header>Name: {props.name}</Card.Header>
+                <Card.Description>Episode: {props.episode}</Card.Description>
+                <Card.Description>Air Date: {props.airdate}</Card.Description>
+            </Card.Content>
+        </Card>
+
+    )
+}
